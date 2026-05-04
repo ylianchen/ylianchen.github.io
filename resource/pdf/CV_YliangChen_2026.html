@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chen Yongliang — CV</title>
+  
+  <!-- 1. IMPORT THE FONT HERE -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 
+      PRINT-READY A4 DESIGN SYSTEM 
+      Pure B&W, Line-free Editorial Layout
+    */
+:root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --gray: #888888;
+      --light-gray: #e0e0e0;
+      
+      /* Change this line: */
+      --font-main: "JetBrains Mono", monospace;
+      
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      --font-serif: "Playfair Display", "Georgia", "Times New Roman", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Web Preview Wrapper (Gray background to see the "paper") */
+    body {
+      background-color: #e5e5e5;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* The A4 Canvas */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background-color: var(--white);
+      color: var(--black);
+      font-family: var(--font-main);
+      padding: 15mm 20mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    /* Header Section */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15mm;
+    }
+
+    /* Reference: Oversized, lowercase serif name with tight line-height */
+    .name-block h1 {
+      font-family: var(--font-serif);
+      font-size: 5.5rem;
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    /* Reference: Vertical Role Title */
+    .role-title {
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      color: var(--black);
+      margin-top: 0.5rem;
+    }
+
+    /* Main 2-Column Grid */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 3fr 5fr;
+      gap: 15mm;
+    }
+
+    /* Section Typography */
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 790;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--black);
+      margin-bottom: 4mm;
+    }
+
+    .section-block {
+      margin-bottom: 12mm;
+    }
+
+    p, li {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: var(--dark-gray);
+    }
+
+    /* Left Column Elements */
+    .about-text {
+      margin-bottom: 4mm;
+    }
+
+    .contact-item, .lang-item {
+      margin-bottom: 2mm;
+    }
+
+    .contact-item strong, .lang-item strong {
+      color: var(--black);
+      display: inline-block;
+      width: 22mm;
+    }
+
+    /* Right Column Elements (Experience & Edu) */
+    .entry {
+      margin-bottom: 6mm;
+    }
+
+    .entry-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--black);
+      text-transform: uppercase;
+      margin-bottom: 1mm;
+    }
+
+    .entry-meta {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-bottom: 1.5mm;
+      font-style: italic;
+    }
+
+    .entry-meta span.divider {
+      margin: 0 4px;
+    }
+
+    .entry-desc {
+      margin-left: 2mm;
+      padding-left: 2mm;
+      border-left: 1px solid transparent; /* Keeps alignment without drawing a line */
+    }
+
+    /* Print Styles (Removes shadows and web padding when saving as PDF) */
+    @media print {
+      body {
+        background-color: var(--white);
+        padding: 0;
+      }
+      .page {
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        padding: 15mm 20mm;
+        margin: 0;
+        page-break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- A4 Print Canvas -->
+  <div class="page">
+    
+    <header class="header-container">
+      <div class="name-block">
+        <h1>chen<br>yongliang</h1>
+      </div>
+      <div class="role-title">
+        *
+      </div>
+    </header>
+
+    <div class="content-grid">
+      
+      <!-- Left Column -->
+      <div class="left-col">
+        
+        <div class="section-block">
+          <!-- <h2 class="section-title">Personal Profile</h2> -- >
+          <!-- <p class="about-text">
+            Photographer, designer, and Audio Visual artist exploring the underlying mechanisms between technology, interactivity, and visual storytelling through animation, video games, generative art, and installations.
+          </p> -->
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">Languages</h2>
+          <div class="lang-item"><strong>Chinese</strong> Native</div>
+          <div class="lang-item"><strong>English</strong> C1</div>
+          <div class="lang-item"><strong>German</strong> B2</div>
+          <div class="lang-item"><strong>Japanese</strong> N1</div>
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">Contact Info</h2>
+          <div class="contact-item"><strong>Phone</strong> 0152 03524073</div>
+          <div class="contact-item"><strong>Email</strong> ychen@hfk-bremen.de</div>
+          <div class="contact-item"><strong>Web</strong> ylianchen.github.io</div>
+        </div>
+
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-col">
+        
+        <div class="section-block">
+          <h2 class="section-title">Work Experience</h2>
+          
+          <div class="entry">
+            <div class="entry-title">Japanese Teacher</div>
+            <div class="entry-meta">Sprachschule Aktiv Bremen <span class="divider">|</span> 2023 — 2026</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">Academic Assistant</div>
+            <div class="entry-meta">ICI Xiamen University, Digital Media Arts <span class="divider">|</span> 2019 — Present</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">Street & Portrait Photographer</div>
+            <div class="entry-meta">Freelance, Bremen <span class="divider">|</span> 2017 — Present</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">Creative Assistant</div>
+            <div class="entry-meta">Hafnia Foundation, Xiamen / Valparaíso <span class="divider">|</span> 2020</div>
+          </div>
+
+
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">Education</h2>
+          
+          <div class="entry">
+            <div class="entry-title">MA, Mediengestaltung</div>
+            <div class="entry-meta">Bauhaus University, Weimar <span class="divider">|</span> 2025 — Present</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">Digital Media</div>
+            <div class="entry-meta">Hochschule für Künste Bremen <span class="divider">|</span> 2020 — Present</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">Digital Media Arts</div>
+            <div class="entry-meta">Xiamen University <span class="divider">|</span> 2015 — 2019</div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">Selected Exhibitions</h2>
+          
+          <div class="entry">
+            <div class="entry-title">Polytope Xla</div>
+            <div class="entry-meta">Speicher XI A, Bremen <span class="divider">|</span> 2023</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">Probes</div>
+            <div class="entry-meta">Galerie Flut, Bremen <span class="divider">|</span> 2022</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">Underbelly</div>
+            <div class="entry-meta">Sandao Art Gallery, Xiamen <span class="divider">|</span> 2019</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">Still frames in the stream</div>
+            <div class="entry-meta">International Animation & Film Festival, Xiamen <span class="divider">|</span> 2018</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">Please open the door with the chicken</div>
+            <div class="entry-meta">Art College of Xiamen University <span class="divider">|</span> 2018</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

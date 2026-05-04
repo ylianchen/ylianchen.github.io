@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陈永亮 — 简历</title>
+  
+  <!-- 1. IMPORT THE FONTS HERE (JetBrains Mono + Noto Sans SC + Noto Serif SC) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+SC:wght@400;500;700;800&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 
+      PRINT-READY A4 DESIGN SYSTEM 
+      Pure B&W, Line-free Editorial Layout
+    */
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --gray: #888888;
+      --light-gray: #e0e0e0;
+      
+      /* Font Stack: JetBrains Mono for English/Numbers, Noto Sans SC for Chinese */
+      --font-main: "JetBrains Mono", "Noto Sans SC", monospace, sans-serif;
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, "Noto Sans SC", monospace;
+      --font-serif: "Playfair Display", "Noto Serif SC", "Georgia", "Times New Roman", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Web Preview Wrapper (Gray background to see the "paper") */
+    body {
+      background-color: #e5e5e5;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* The A4 Canvas */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-main);
+      padding: 15mm 20mm;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    /* Header Section */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15mm;
+    }
+
+    /* Reference: Oversized, lowercase serif name with tight line-height */
+    .name-block h1 {
+      font-family: var(--font-serif);
+      font-size: 5.5rem;
+      line-height: 1.1; /* Slightly adjusted for Chinese character bounding boxes */
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      color: var(--fg);
+    }
+
+    /* Reference: Vertical Role Title */
+    .role-title {
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+      color: var(--fg);
+      margin-top: 0.5rem;
+    }
+
+    /* Main 2-Column Grid */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 3fr 5fr;
+      gap: 15mm;
+    }
+
+    /* Section Typography */
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700; /* Noto Sans handles 700 better than 790 */
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--fg);
+      margin-bottom: 4mm;
+    }
+
+    .section-block {
+      margin-bottom: 12mm;
+    }
+
+    p, li {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--gray); /* Adapted from your original var(--dark-gray) intent */
+    }
+
+    /* Left Column Elements */
+    .about-text {
+      margin-bottom: 4mm;
+    }
+
+    .contact-item, .lang-item {
+      margin-bottom: 2mm;
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    .contact-item strong, .lang-item strong {
+      color: var(--fg);
+      display: inline-block;
+      width: 22mm;
+      font-weight: 500;
+    }
+
+    /* Right Column Elements (Experience & Edu) */
+    .entry {
+      margin-bottom: 6mm;
+    }
+
+    .entry-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--fg);
+      text-transform: uppercase;
+      margin-bottom: 1mm;
+    }
+
+    .entry-meta {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-bottom: 1.5mm;
+      font-style: italic;
+    }
+
+    .entry-meta span.divider {
+      margin: 0 4px;
+      font-style: normal;
+    }
+
+    .entry-desc {
+      margin-left: 2mm;
+      padding-left: 2mm;
+      border-left: 1px solid transparent; 
+    }
+
+    /* Print Styles (Removes shadows and web padding when saving as PDF) */
+    @media print {
+      body {
+        background-color: var(--bg);
+        padding: 0;
+      }
+      .page {
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        padding: 15mm 20mm;
+        margin: 0;
+        page-break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- A4 Print Canvas -->
+  <div class="page">
+    
+    <header class="header-container">
+      <div class="name-block">
+        <h1>陈<br>泳梁</h1>
+      </div>
+      <div class="role-title">
+        *
+      </div>
+    </header>
+
+    <div class="content-grid">
+      
+      <!-- Left Column -->
+      <div class="left-col">
+        
+        <div class="section-block">
+          <!-- <h2 class="section-title">个人简介</h2> -->
+          <!-- <p class="about-text">
+            作为一名摄影师、设计师与视听艺术家，我致力于通过动画、电子游戏、生成艺术及交互装置，探索技术、交互性与视觉叙事之间的底层机制。
+          </p> -->
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">语言能力</h2>
+          <div class="lang-item"><strong>中文</strong> 母语</div>
+          <div class="lang-item"><strong>英语</strong> C1</div>
+          <div class="lang-item"><strong>德语</strong> B2</div>
+          <div class="lang-item"><strong>日语</strong> N1</div>
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">联系方式</h2>
+          <div class="contact-item"><strong>电话</strong> 0152 03524073</div>
+          <div class="contact-item"><strong>邮箱</strong> ychen@hfk-bremen.de</div>
+          <div class="contact-item"><strong>网站</strong> ylianchen.github.io</div>
+        </div>
+
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-col">
+        
+        <div class="section-block">
+          <h2 class="section-title">工作经历</h2>
+          
+          <div class="entry">
+            <div class="entry-title">日语教师</div>
+            <div class="entry-meta">Sprachschule Aktiv 不来梅 <span class="divider">|</span> 2023 — 2026</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">教学助理</div>
+            <div class="entry-meta">厦门大学创意与创新学院，数字媒体艺术 <span class="divider">|</span> 2019 — 至今</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">街头与人像摄影师</div>
+            <div class="entry-meta">自由职业，不来梅 <span class="divider">|</span> 2017 — 至今</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">创意助理</div>
+            <div class="entry-meta">Hafnia 基金会，厦门 / 瓦尔帕莱索 <span class="divider">|</span> 2020</div>
+          </div>
+
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">教育背景</h2>
+          
+          <div class="entry">
+            <div class="entry-title">媒体设计 硕士</div>
+            <div class="entry-meta">包豪斯大学，魏玛 <span class="divider">|</span> 2025 — 至今</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">数字媒体</div>
+            <div class="entry-meta">不来梅艺术学院 (HfK Bremen) <span class="divider">|</span> 2020 — 至今</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">数字媒体艺术</div>
+            <div class="entry-meta">厦门大学 <span class="divider">|</span> 2015 — 2019</div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">参展经历</h2>
+          
+          <div class="entry">
+            <div class="entry-title">Polytope Xla</div>
+            <div class="entry-meta">Speicher XI A，不来梅 <span class="divider">|</span> 2023</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">Probes</div>
+            <div class="entry-meta">Galerie Flut，不来梅 <span class="divider">|</span> 2022</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">暗流 (Underbelly)</div>
+            <div class="entry-meta">三道美术馆，厦门 <span class="divider">|</span> 2019</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">信息流中的静帧 (Still frames in the stream)</div>
+            <div class="entry-meta">国际动画与电影节，厦门 <span class="divider">|</span> 2018</div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-title">请用鸡开门 (Please open the door with the chicken)</div>
+            <div class="entry-meta">厦门大学艺术学院 <span class="divider">|</span> 2018</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

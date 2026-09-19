@@ -7,40 +7,45 @@ class Player {
     }
 
     reset() {
-        this.x = width / 2;
-        this.y = height - 150;
+        this.x = width ? width / 2 - 25 : 315;
+        this.y = height ? height - 160 : 520;
         this.vx = 0;
         this.vy = 0;
-        this.speed = 1;
+        this.speed = 3.5;
         this.opacity = 255;
     }
 
     move() {
+        this.vx = 0;
+        this.vy = 0;
+        if (keyIsDown(UP_ARROW) || keyIsDown(87)) this.vy -= this.speed;
+        if (keyIsDown(DOWN_ARROW) || keyIsDown(83)) this.vy += this.speed;
+        if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) this.vx -= this.speed;
+        if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) this.vx += this.speed;
+
         this.y += this.vy;
         this.x += this.vx;
         this.constrainPosition();
     }
 
     constrainPosition() {
-        this.y = constrain(this.y, 100, height - 150);
-        this.x = constrain(this.x, 160 + 25, 520 - 25); // Adjust boundary calculations
+        this.y = constrain(this.y, 80, height - 100);
+        this.x = constrain(this.x, 160, 520 - 50);
     }
     display() {
         push();
-        imageMode(CENTER); // Set image mode to center
         tint(255, this.opacity);
         const carImage = this.selectedCar === 0 ? this.assets.cars.player1 : this.assets.cars.player2;
-        image(carImage, this.x + 25, this.y + 25); // Add half width/height to position at center
-        imageMode(CORNER); // Reset to default for other elements
+        image(carImage, this.x, this.y);
         pop();
         
         this.drawTurbulence();
     }
     drawTurbulence() {
-        const x = random(this.x, this.x + 50);
-        const y1 = random(this.y, height);
-        const y2 = random(this.y, height);
-        stroke(255);
+        const x = random(this.x, this.x + 27);
+        const y1 = random(this.y + 50, height);
+        const y2 = random(this.y + 50, height);
+        stroke(255, 180);
         line(x, y1, x, y2);
     }
 

@@ -1,34 +1,29 @@
-// Fixed Animation.js
+// Animation.js - Highway background loop
 class Animation {
     constructor(images, x, y) {
-        this.x = x;
-        this.y = y;
-        // Store reference to shared images array instead of copying
+        this.x = x || 0;
+        this.y = y || 0;
         this.images = images; 
         this.index = 0;
-        this.speed = CONFIG.GAME.GLOBAL_SPEED * 4;
-        // Add frame counter to avoid floating point precision issues
-        this.frameCount = 0;
     }
 
     display() {
         const imageIndex = int(this.index);
-        if (this.images[imageIndex]) {
-            image(this.images[imageIndex], 0, 0);
+        if (this.images && this.images[imageIndex]) {
+            image(this.images[imageIndex], this.x, this.y);
         }
     }
 
     move() {
-        this.speed = newGlobalSpeed * 4;
-        this.y += this.speed;
+        // The background frames represent continuous highway motion
     }
 
     next() {
-        // Use integer frame counting instead of floating point
-        this.frameCount++;
-        if (this.frameCount >= 4) { // Adjust speed by changing this number
-            this.index = (this.index + 1) % this.images.length;
-            this.frameCount = 0;
+        if (!this.images || this.images.length === 0) return;
+        const currentSpeed = typeof newGlobalSpeed !== 'undefined' ? newGlobalSpeed : 0.5;
+        this.index += currentSpeed * 2.5;
+        if (this.index >= this.images.length) {
+            this.index = this.index % this.images.length;
         }
     }
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YCHen — Road Rage Game</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+</head>
+<body>
+
+  <header>
+    <nav id="nav">
+      <div id="headerbox_left">
+        <div id="n_logo" class="headerelement"> 
+          <a href="../index.html"><img src="img/logo/logo.png" class="logo-img" alt="YCH Logo"></a> 
+        </div> 
+        <div id="my_name" class="headerelement">
+          <a href="../index.html">Y.Liang Chen</a>
+        </div>
+      </div>
+      <div id="headerbox"> 
+        <div id="n_photography" class="headerelement">
+          <a href="../index.html">photography</a>
+        </div> 
+        <div id="n_work" class="headerelement active">
+          <a href="../work.html">work</a>
+        </div> 
+        <div id="n_sketches" class="headerelement">
+          <a href="../sketches.html">sketches</a>
+        </div>
+        <div id="n_about" class="headerelement">
+          <a href="../about.html">About</a>
+        </div> 
+        <div id="n_cv" class="headerelement">
+          <a href="../CV.html">CV</a>
+        </div> 
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div id="game-container">
+      <div id="loading-screen">Loading Game Assets... 0%</div>
+    </div>
+    <div class="game-instructions">
+      <p>Controls: <span>Arrow Keys</span> or <span>W A S D</span> to Drive &bull; <span>Space</span> or <span>Click</span> to Start &bull; Avoid Cop Cars &amp; Roadblocks &bull; Collect Stars</p>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/AssetLoader.js"></script>
+    <script src="js/Animation.js"></script>
+    <script src="js/Bonus.js"></script>
+    <script src="js/Enemies.js"></script>
+    <script src="js/Player.js"></script>
+    <script src="js/main.js"></script>
+  </main>
+
+</body>
+</html>

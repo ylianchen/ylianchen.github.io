@@ -1,32 +1,272 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="resource\css\style.css">
-</head>
-<title>YCHen</title>
-<div id="nav">
-  <div id="headerbox"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YCHen — Curriculum Vitae</title>
+  <link rel="stylesheet" href="resource/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --gray: #888888;
+      --font-main: "JetBrains Mono", monospace;
+      --font-serif: "Playfair Display", "Georgia", serif;
+    }
 
-    <div id="n_photography" class="headerelement">
-      <a href="/">photography</a>
-    </div> 
-    <div id="n_news" class="headerelement">
-      <a href="/work.html">work</a>
-    </div> 
-    <div id="n_about" class="headerelement">
-      <a href="/about.html">About</a>
-    </div> 
-    <div id="n_archive" class="headerelement active">
-      <a href="/CV.html">CV</a>
-    </div> 
-  </div>
-  <div id="headerbox_left">
-    <div id="n_logo" class="headerelement"> 
-      <a href="/index.html"> <img src="resource\img\logo\logo.png" height="39" style="vertical-align:top"> &nbsp;YCH&nbsp; </a> 
-    </div> 
-    <div id="my_name" class="headerelement">
-      <a href="/index.html">Y.Liang Chen</a>
+    .cv-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px 30px;
+      background-color: #ffffff;
+      color: var(--fg);
+      font-family: var(--font-main);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid #eaeaea;
+      border-radius: 4px;
+    }
+
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #111;
+    }
+
+    .cv-name h1 {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+      color: #111;
+      text-transform: lowercase;
+    }
+
+    .cv-role {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+    }
+
+    .cv-section-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #111;
+      margin-bottom: 12px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cv-block {
+      margin-bottom: 28px;
+    }
+
+    .cv-item {
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .cv-item strong {
+      color: #111;
+      display: inline-block;
+      min-width: 80px;
+    }
+
+    .cv-entry {
+      margin-bottom: 18px;
+    }
+
+    .cv-entry-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #111;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .cv-entry-meta {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-bottom: 4px;
+      font-style: italic;
+    }
+
+    .cv-entry-meta .divider {
+      margin: 0 6px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .cv-container {
+        margin: 20px auto;
+        padding: 25px 20px;
+      }
+
+      .cv-name h1 {
+        font-size: 2.8rem;
+      }
+
+      .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav id="nav">
+      <div id="headerbox_left">
+        <div id="n_logo" class="headerelement"> 
+          <a href="index.html"><img src="resource/img/logo/logo.png" class="logo-img" alt="YCH Logo"></a> 
+        </div> 
+        <div id="my_name" class="headerelement">
+          <a href="index.html">Y.Liang Chen</a>
+        </div>
+      </div>
+      <div id="headerbox"> 
+        <div id="n_photography" class="headerelement">
+          <a href="index.html">photography</a>
+        </div> 
+        <div id="n_work" class="headerelement">
+          <a href="work.html">work</a>
+        </div> 
+        <div id="n_sketches" class="headerelement">
+          <a href="sketches.html">sketches</a>
+        </div>
+        <div id="n_about" class="headerelement">
+          <a href="about.html">About</a>
+        </div> 
+        <div id="n_cv" class="headerelement active">
+          <a href="CV.html">CV</a>
+        </div> 
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="cv-container">
+      <header class="cv-header">
+        <div class="cv-name">
+          <h1>chen<br>yongliang</h1>
+        </div>
+        <div class="cv-role">
+          *
+        </div>
+      </header>
+
+      <div class="cv-grid">
+        <!-- Left Column -->
+        <div class="cv-left">
+          <div class="cv-block">
+            <h2 class="cv-section-title">Languages</h2>
+            <div class="cv-item"><strong>Chinese</strong> Native</div>
+            <div class="cv-item"><strong>English</strong> C1</div>
+            <div class="cv-item"><strong>German</strong> B2</div>
+            <div class="cv-item"><strong>Japanese</strong> N1</div>
+          </div>
+
+          <div class="cv-block">
+            <h2 class="cv-section-title">Contact Info</h2>
+            <div class="cv-item"><strong>Phone</strong> 0152 03524073</div>
+            <div class="cv-item"><strong>Email</strong> ychen@hfk-bremen.de</div>
+            <div class="cv-item"><strong>Web</strong> ylianchen.github.io</div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="cv-right">
+          <div class="cv-block">
+            <h2 class="cv-section-title">Work Experience</h2>
+            
+            <div class="cv-entry">
+              <div class="cv-entry-title">Japanese Teacher</div>
+              <div class="cv-entry-meta">Sprachschule Aktiv Bremen <span class="divider">|</span> 2023 — 2026</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title">Academic Assistant</div>
+              <div class="cv-entry-meta">ICI Xiamen University, Digital Media Arts <span class="divider">|</span> 2019 — Present</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title">Street & Portrait Photographer</div>
+              <div class="cv-entry-meta">Freelance, Bremen <span class="divider">|</span> 2017 — Present</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title">Creative Assistant</div>
+              <div class="cv-entry-meta">Hafnia Foundation, Xiamen / Valparaíso <span class="divider">|</span> 2020</div>
+            </div>
+          </div>
+
+          <div class="cv-block">
+            <h2 class="cv-section-title">Education</h2>
+            
+            <div class="cv-entry">
+              <div class="cv-entry-title">MA, Mediengestaltung</div>
+              <div class="cv-entry-meta">Bauhaus University, Weimar <span class="divider">|</span> 2025 — Present</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title">Digital Media</div>
+              <div class="cv-entry-meta">Hochschule für Künste Bremen <span class="divider">|</span> 2020 — Present</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title">Digital Media Arts</div>
+              <div class="cv-entry-meta">Xiamen University <span class="divider">|</span> 2015 — 2019</div>
+            </div>
+          </div>
+
+          <div class="cv-block">
+            <h2 class="cv-section-title">Selected Exhibitions</h2>
+            
+            <div class="cv-entry">
+              <div class="cv-entry-title">Polytope Xla</div>
+              <div class="cv-entry-meta">Speicher XI A, Bremen <span class="divider">|</span> 2023</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title">Probes</div>
+              <div class="cv-entry-meta">Galerie Flut, Bremen <span class="divider">|</span> 2022</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title">Underbelly</div>
+              <div class="cv-entry-meta">Sandao Art Gallery, Xiamen <span class="divider">|</span> 2019</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title">Still frames in the stream</div>
+              <div class="cv-entry-meta">International Animation & Film Festival, Xiamen <span class="divider">|</span> 2018</div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-title">Please open the door with the chicken</div>
+              <div class="cv-entry-meta">Art College of Xiamen University <span class="divider">|</span> 2018</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </main>
+
+</body>
+</html>

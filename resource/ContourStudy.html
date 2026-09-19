@@ -1,62 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href= "css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YCHen — Contour Study</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<title>YCHen</title>
-
-<div id="nav">
-  <div id="headerbox"> 
-
-    <div id="n_photography" class="headerelement">
-      <a href="/">photography</a>
-    </div> 
-    <div id="n_news" class="headerelement active">
-      <a href="/work.html">work</a>
-    </div> 
-    <div id="n_about" class="headerelement">
-      <a href="/about.html">About</a>
-    </div> 
-    <div id="n_archive" class="headerelement">
-      <a href="/resource/pdf/CV_YliangChen_2023.pdf">CV</a>
-    </div> 
-  </div>
-  <div id="headerbox_left">
-    <div id="n_logo" class="headerelement"> 
-      <a href="/index.html"> <img src="img/logo/logo.png" height="39" style="vertical-align:top"> &nbsp;YCH&nbsp; </a> 
-    </div> 
-    <div id="my_name" class="headerelement">
-      <a href="/index.html">Y.Liang Chen</a>
-    </div>
-  </div>
-</div>
-
 <body>
-  <div class="block1">
-    <div class="exhibitions">
-      <center>
-      <video controls id="myHead" src="img/works/4_1.mp4">
-      
-      </center>
-      <video controls id="myHead2" src="img/works/4_2.mp4" width="640px">
-        
+
+  <header>
+    <nav id="nav">
+      <div id="headerbox_left">
+        <div id="n_logo" class="headerelement"> 
+          <a href="../index.html"><img src="img/logo/logo.png" class="logo-img" alt="YCH Logo"></a> 
+        </div> 
+        <div id="my_name" class="headerelement">
+          <a href="../index.html">Y.Liang Chen</a>
+        </div>
+      </div>
+      <div id="headerbox"> 
+        <div id="n_photography" class="headerelement">
+          <a href="../index.html">photography</a>
+        </div> 
+        <div id="n_work" class="headerelement active">
+          <a href="../work.html">work</a>
+        </div> 
+        <div id="n_sketches" class="headerelement">
+          <a href="../sketches.html">sketches</a>
+        </div>
+        <div id="n_about" class="headerelement">
+          <a href="../about.html">About</a>
+        </div> 
+        <div id="n_cv" class="headerelement">
+          <a href="../CV.html">CV</a>
+        </div> 
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="block1">
+      <div class="exhibitions">
+        <video controls class="work-detail-img" src="img/works/4_1.mp4"></video>
+        <video controls class="work-detail-img" src="img/works/4_2.mp4"></video>
+        <img class="work-detail-img" src="img/works/4_3.jpg" alt="Contour Study Image">
+      </div>
+      <div class="text">
+        <h3>Contour Study</h3>
+        <p>
+          Documented the decaying geometries of Bremen's WWII-era submarine docks, extracting their inherent structural language as conceptual material. 
+          Through photography investigation of these militaristic ruins, isolated compelling formal elements that embody forced perspective and contained absence. 
+          Translated these archaeological observations into a digital artifact—a minimalist structure suspended between water and sky—distilling the concrete 
+          fortification's imposing presence into abstracted form. The resulting 30-second animation recontextualizes historical military infrastructure as floating 
+          speculative architecture, transforming oppressive confined space into contemplative void. This visual meditation explores how sites of historical trauma 
+          can be processed through digital reinterpretation.
+        </p>
+      </div>
     </div>
-    <img id="myHead" src="img/works/4_3.jpg">
-    <div class="text" style="padding-top: 30px;">
-      <h3></h3>
-      <p>
-        Documented the decaying geometries of Bremen's WWII-era submarine docks, extracting their inherent structural language as conceptual material. 
-        Through photography investigation of these militaristic ruins, isolated compelling formal elements that embody forced perspective and contained absence. 
-        Translated these archaeological observations into a digital artifact—a minimalist structure suspended between water and sky—distilling the concrete 
-        fortification's imposing presence into abstracted form. The resulting 30-second animation recontextualizes historical military infrastructure as floating 
-        speculative architecture, transforming oppressive confined space into contemplative void. This visual meditation explores how sites of historical trauma 
-        can be processed through digital reinterpretation.
-
-      </p>
-
-
-    </div>
-  </div>
+  </main>
 
 </body>
+</html>

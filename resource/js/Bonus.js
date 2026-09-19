@@ -1,10 +1,10 @@
 // js/classes/Bonus.js
 class Bonus {
-    constructor(x, type, assets) {
-        this.size = 30;
+    constructor(x, type, speed, assets) {
+        this.size = 32;
         this.x = x;
         this.y = -this.size;
-        this.speed = newGlobalSpeed / 2;
+        this.speed = speed || (CONFIG.GAME.BONUS.BASE_SPEED || 3.8);
         this.type = type;
         this.isCollected = false;
         this.assets = assets;
@@ -18,58 +18,35 @@ class Bonus {
 
     update() {
         if (!this.isCollected) {
-            this.y += this.speed;
-            if (this.y > height) {
+            // Speed scales dynamically with slow-motion if active
+            const speedMultiplier = (typeof newGlobalSpeed !== 'undefined' && typeof globalSpeed !== 'undefined' && globalSpeed > 0)
+                ? (newGlobalSpeed / globalSpeed) : 1;
+            this.y += this.speed * speedMultiplier;
+            if (this.y > height + 50) {
                 this.onScreen = false;
             }
         }
     }
 
     display() {
-        if (!this.isCollected) {
+        if (!this.isCollected && this.icons[this.type]) {
             image(this.icons[this.type], this.x, this.y, this.size, this.size);
         }
     }
 
     checkCollection(player) {
-        if (!this.isCollected &&
-            player.x - 25 >= this.x - 50 && // Adjust for center positioning
-            player.x - 25 <= this.x + this.size &&
-            player.y - 25 >= this.y - 50 &&
-            player.y - 25 <= this.y + this.size) {
+        const pW = 27;
+        const pH = 57;
+        if (!this.isCollected && this.onScreen &&
+            player.x < this.x + this.size &&
+            player.x + pW > this.x &&
+            player.y < this.y + this.size &&
+            player.y + pH > this.y) {
             this.isCollected = true;
-            this.applyEffect(player);
+            this.onScreen = false;
+            if (typeof applyBonusEffect === 'function') {
+                applyBonusEffect(this.type);
+            }
         }
-    }
-
-    applyEffect(player) {
-        switch(this.type) {
-            case 0: // Civilian
-                bonusScore = scoreIncrement * 2;
-                break;
-            case 1: // Slow down time
-                bonusBegin = millis();
-                newGlobalSpeed = globalSpeed / 2;
-                scoreIncrement = 0.0025;
-                break;
-            case 2: // Invisible
-                bonusBegin = millis();
-                player.opacity = 128;
-                invisible = true;
-                break;
-        }
-    }
-
-    checkEffectDuration() {
-        if (millis() - bonusBegin > CONFIG.GAME.BONUS.EFFECT_DURATION) {
-            this.removeEffect();
-        }
-    }
-
-    removeEffect() {
-        newGlobalSpeed = globalSpeed;
-        scoreIncrement = CONFIG.GAME.SCORE.INCREMENT;
-        playerOpacity = 255;
-        invisible = false;
     }
 }

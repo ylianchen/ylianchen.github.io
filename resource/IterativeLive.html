@@ -1,64 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href= "css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YCHen — Iterative Live</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 20px 0;
+    }
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
 </head>
-<title>YCHen</title>
-
-<div id="nav">
-  <div id="headerbox"> 
-
-    <div id="n_photography" class="headerelement">
-      <a href="/">photography</a>
-    </div> 
-    <div id="n_news" class="headerelement active">
-      <a href="/work.html">work</a>
-    </div> 
-    <div id="n_about" class="headerelement">
-      <a href="/about.html">About</a>
-    </div> 
-    <div id="n_archive" class="headerelement">
-      <a href="/resource/pdf/CV_YliangChen_2023.pdf">CV</a>
-    </div> 
-  </div>
-  <div id="headerbox_left">
-    <div id="n_logo" class="headerelement"> 
-      <a href="/index.html"> <img src="img/logo/logo.png" height="39" style="vertical-align:top"> &nbsp;YCH&nbsp; </a> 
-    </div> 
-    <div id="my_name" class="headerelement">
-      <a href="/index.html">Y.Liang Chen</a>
-    </div>
-  </div>
-</div>
-
 <body>
-  <div class="block1">
-    <div class="exhibitions">
-      <center>
-        <iframe src="https://player.vimeo.com/video/880296754?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        
-        <img id="myHead" src="img/works/7_1.jpg">
-        <img id="myHead" src="img/works/7_2.jpg">
-        <img id="myHead" src="img/works/7_3.jpg">
-        <img id="myHead" src="img/works/7_4.jpg">
-        <img id="myHead" src="img/works/7_5.jpg">
-        <img id="myHead" src="img/works/7_6.jpg">
-        
-      
-      
+
+  <header>
+    <nav id="nav">
+      <div id="headerbox_left">
+        <div id="n_logo" class="headerelement"> 
+          <a href="../index.html"><img src="img/logo/logo.png" class="logo-img" alt="YCH Logo"></a> 
+        </div> 
+        <div id="my_name" class="headerelement">
+          <a href="../index.html">Y.Liang Chen</a>
+        </div>
+      </div>
+      <div id="headerbox"> 
+        <div id="n_photography" class="headerelement">
+          <a href="../index.html">photography</a>
+        </div> 
+        <div id="n_work" class="headerelement active">
+          <a href="../work.html">work</a>
+        </div> 
+        <div id="n_sketches" class="headerelement">
+          <a href="../sketches.html">sketches</a>
+        </div>
+        <div id="n_about" class="headerelement">
+          <a href="../about.html">About</a>
+        </div> 
+        <div id="n_cv" class="headerelement">
+          <a href="../CV.html">CV</a>
+        </div> 
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="block1">
+      <div class="exhibitions">
+        <div class="video-responsive">
+          <iframe src="https://player.vimeo.com/video/880296754?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen" allowfullscreen title="Iterative Live Video"></iframe>
+        </div>
+        <img class="work-detail-img" src="img/works/7_1.jpg" alt="Iterative Live 1">
+        <img class="work-detail-img" src="img/works/7_2.jpg" alt="Iterative Live 2">
+        <img class="work-detail-img" src="img/works/7_3.jpg" alt="Iterative Live 3">
+        <img class="work-detail-img" src="img/works/7_4.jpg" alt="Iterative Live 4">
+        <img class="work-detail-img" src="img/works/7_5.jpg" alt="Iterative Live 5">
+        <img class="work-detail-img" src="img/works/7_6.jpg" alt="Iterative Live 6">
+      </div>
+      <div class="text">
+        <h3>Iterative Live</h3>
+        <p>
+          The projection mapping project draws inspiration from "The Circular Ruins". I want to explore the themes of machine hallucination, recursion, and the blurred line between reality and dreams.
+        </p>
+        <p>
+          Using a Kinect sensor, a projector, and a laptop running TouchDesigner, the Kinect sensor captures infrared data, detecting human activity and presence within the space. This data is then analyzed by image generative algorithms through an API, employing the given keyword "dandelion" to craft a visual representation of the human form. Once the generative algorithm shapes the visuals, the resulting imagery is integrated back into TouchDesigner. The reimagined visuals are projected onto a physical wall, mapping the transformed imagery onto the tangible space, unveiling hidden narratives within the human silhouette.
+        </p>
+      </div>
     </div>
-    <div class="text" style="padding-top: 30px;">
-      <h3></h3>
-      <p>
-        The projection mapping project draws inspiration from "The Circular Ruins"。 I want to explore the themes of machine hallucination, recursion, and the blurred line between reality and dreams.
-
-        Using a Kinect sensor, a projector, and a laptop running TouchDesigner, The Kinect sensor captures infrared data, detecting human activity and presence within the space. This data is then analyzed by image generative algorithms through an api, employing the given keyword "dandelion" to craft a visual representation of the human form. Once the generative algorithm shapes the visuals, the resulting imagery is integrated back into TouchDesigner. The reimagined visuals being projected onto a physical wall, mapping the transformed imagery onto the tangible space, unveiling hidden narratives within the human silhouette.
-        
-      </p>
-
-
-    </div>
-  </div>
+  </main>
 
 </body>
+</html>

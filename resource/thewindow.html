@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YCHen — The Window</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav id="nav">
+      <div id="headerbox_left">
+        <div id="n_logo" class="headerelement"> 
+          <a href="../index.html"><img src="img/logo/logo.png" class="logo-img" alt="YCH Logo"></a> 
+        </div> 
+        <div id="my_name" class="headerelement">
+          <a href="../index.html">Y.Liang Chen</a>
+        </div>
+      </div>
+      <div id="headerbox"> 
+        <div id="n_photography" class="headerelement">
+          <a href="../index.html">photography</a>
+        </div> 
+        <div id="n_work" class="headerelement active">
+          <a href="../work.html">work</a>
+        </div> 
+        <div id="n_sketches" class="headerelement">
+          <a href="../sketches.html">sketches</a>
+        </div>
+        <div id="n_about" class="headerelement">
+          <a href="../about.html">About</a>
+        </div> 
+        <div id="n_cv" class="headerelement">
+          <a href="../CV.html">CV</a>
+        </div> 
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="block1">
+      <div id="game-container" class="game-wide">
+        <iframe id="game-frame" src="package.nw/index.html" allow="autoplay; fullscreen" allowfullscreen="true" scrolling="no" frameborder="0"></iframe>
+      </div>
+      <div class="game-instructions">
+        <p>Controls: <span>Mouse</span> (Click, Drag, and Move to operate the floating window and interact) &bull; <button type="button" class="game-fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button></p>
+      </div>
+      <div class="text">
+        <h3>The Window</h3>
+        <p>
+          When the content of the media does not serve the public, people cannot obtain effective information from it. Using Construct2, I made a game about discovering the truth. Players operate a floating window that can see-through everything underneath, players need to avoid anti-virus program that appear on the webpage. At the same time look for items to make the window larger enable to see more information underneath.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleFullscreen() {
+      var elem = document.getElementById('game-frame');
+      if (!elem) return;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+    }
+  </script>
+
+</body>
+</html>

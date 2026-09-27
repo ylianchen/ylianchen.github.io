@@ -36,70 +36,215 @@
   </header>
 
   <main>
+    <div class="gallery-tabs" role="tablist">
+      <button class="gallery-tab active" data-target="urban" onclick="switchCategory('urban')">
+        Urban &amp; Architecture <span class="tab-count">(16)</span>
+      </button>
+      <button class="gallery-tab" data-target="portrait" onclick="switchCategory('portrait')">
+        Portraits &amp; Performance <span class="tab-count">(9)</span>
+      </button>
+      <button class="gallery-tab" data-target="land" onclick="switchCategory('land')">
+        Land &amp; Atmosphere <span class="tab-count">(6)</span>
+      </button>
+    </div>
+
     <div class="slideshow-container" id="slideshow">
-      <div class="mySlides fade">
-        <img src="resource/img/photography/1.jpg" alt="Photography 1" loading="lazy">
+      <!-- Urban & Architecture (16 slides) -->
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_01.jpg" alt="Urban & Architecture 1" loading="eager">
       </div>
-      <div class="mySlides fade">
-        <img src="resource/img/photography/2.jpg" alt="Photography 2" loading="lazy">
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_02.jpg" alt="Urban & Architecture 2" loading="lazy">
       </div>
-      <div class="mySlides fade">
-        <img src="resource/img/photography/3.jpg" alt="Photography 3" loading="lazy">
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_03.jpg" alt="Urban & Architecture 3" loading="lazy">
       </div>
-      <div class="mySlides fade">
-        <img src="resource/img/photography/4.jpg" alt="Photography 4" loading="lazy">
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_04.jpg" alt="Urban & Architecture 4" loading="lazy">
       </div>
-      <div class="mySlides fade">
-        <img src="resource/img/photography/5.jpg" alt="Photography 5" loading="lazy">
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_05.jpg" alt="Urban & Architecture 5" loading="lazy">
       </div>
-      <div class="mySlides fade">
-        <img src="resource/img/photography/6.jpg" alt="Photography 6" loading="lazy">
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_06.jpg" alt="Urban & Architecture 6" loading="lazy">
       </div>
-      <div class="mySlides fade">
-        <img src="resource/img/photography/7.jpg" alt="Photography 7" loading="lazy">
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_07.jpg" alt="Urban & Architecture 7" loading="lazy">
       </div>
-      <div class="mySlides fade">
-        <img src="resource/img/photography/8.jpg" alt="Photography 8" loading="lazy">
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_08.jpg" alt="Urban & Architecture 8" loading="lazy">
       </div>
-      <div class="mySlides fade">
-        <img src="resource/img/photography/9.jpg" alt="Photography 9" loading="lazy">
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_09.jpg" alt="Urban & Architecture 9" loading="lazy">
       </div>
-      <div class="mySlides fade">
-        <img src="resource/img/photography/10.jpg" alt="Photography 10" loading="lazy">
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_10.jpg" alt="Urban & Architecture 10" loading="lazy">
       </div>
-      <div class="mySlides fade">
-        <img src="resource/img/photography/11.jpg" alt="Photography 11" loading="lazy">
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_11.jpg" alt="Urban & Architecture 11" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_12.jpg" alt="Urban & Architecture 12" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_13.jpg" alt="Urban & Architecture 13" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_14.jpg" alt="Urban & Architecture 14" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_15.jpg" alt="Urban & Architecture 15" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="urban">
+        <img src="resource/img/photography/urban_16.jpg" alt="Urban & Architecture 16" loading="lazy">
+      </div>
+
+      <!-- Portraits & Performance (9 slides) -->
+      <div class="mySlides fade" data-category="portrait">
+        <img src="resource/img/photography/portrait_01.jpg" alt="Portraits & Performance 1" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="portrait">
+        <img src="resource/img/photography/portrait_02.jpg" alt="Portraits & Performance 2" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="portrait">
+        <img src="resource/img/photography/portrait_03.jpg" alt="Portraits & Performance 3" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="portrait">
+        <img src="resource/img/photography/portrait_04.jpg" alt="Portraits & Performance 4" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="portrait">
+        <img src="resource/img/photography/portrait_05.jpg" alt="Portraits & Performance 5" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="portrait">
+        <img src="resource/img/photography/portrait_06.jpg" alt="Portraits & Performance 6" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="portrait">
+        <img src="resource/img/photography/portrait_07.jpg" alt="Portraits & Performance 7" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="portrait">
+        <img src="resource/img/photography/portrait_08.jpg" alt="Portraits & Performance 8" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="portrait">
+        <img src="resource/img/photography/portrait_09.jpg" alt="Portraits & Performance 9" loading="lazy">
+      </div>
+
+      <!-- Land & Atmosphere (6 slides) -->
+      <div class="mySlides fade" data-category="land">
+        <img src="resource/img/photography/land_01.jpg" alt="Land & Atmosphere 1" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="land">
+        <img src="resource/img/photography/land_02.jpg" alt="Land & Atmosphere 2" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="land">
+        <img src="resource/img/photography/land_03.jpg" alt="Land & Atmosphere 3" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="land">
+        <img src="resource/img/photography/land_04.jpg" alt="Land & Atmosphere 4" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="land">
+        <img src="resource/img/photography/land_05.jpg" alt="Land & Atmosphere 5" loading="lazy">
+      </div>
+      <div class="mySlides fade" data-category="land">
+        <img src="resource/img/photography/land_06.jpg" alt="Land & Atmosphere 6" loading="lazy">
       </div>
     </div>
 
     <div class="button">
-      <button class="w3-button" onclick="plusSlides(-1)">PREV</button>
-      <button class="w3-button" onclick="plusSlides(1)">NEXT</button>
+      <button class="w3-button" id="prev-btn" onclick="plusSlides(-1)" aria-label="Previous image">PREV</button>
+      <span id="slide-counter" aria-live="polite">01 / 16</span>
+      <button class="w3-button" id="next-btn" onclick="plusSlides(1)" aria-label="Next image">NEXT</button>
     </div>
   </main>
 
   <script>
+    let currentCategory = 'urban';
     let slideIndex = 1;
-    showSlides(slideIndex);
+
+    // Track position per category so returning to a category keeps your place
+    const categoryIndices = {
+      urban: 1,
+      portrait: 1,
+      land: 1
+    };
+
+    function getCategorySlides(cat) {
+      return document.querySelectorAll(`.mySlides[data-category="${cat}"]`);
+    }
+
+    function switchCategory(catKey, pushHash = true) {
+      if (!categoryIndices.hasOwnProperty(catKey)) {
+        catKey = 'urban';
+      }
+      currentCategory = catKey;
+      slideIndex = categoryIndices[catKey] || 1;
+
+      // Update active tab button
+      document.querySelectorAll('.gallery-tab').forEach(tab => {
+        if (tab.dataset.target === catKey) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+
+      // Update URL hash if requested
+      if (pushHash && window.location.hash.replace('#', '') !== catKey) {
+        history.replaceState(null, '', '#' + catKey);
+      }
+
+      showSlides(slideIndex);
+    }
 
     function plusSlides(n) {
       showSlides(slideIndex += n);
     }
 
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
+    function showSlides(n) {
+      const allSlides = document.querySelectorAll('.mySlides');
+      const catSlides = getCategorySlides(currentCategory);
+      const total = catSlides.length;
+
+      if (total === 0) return;
+
+      if (n > total) { slideIndex = 1; }
+      if (n < 1) { slideIndex = total; }
+      categoryIndices[currentCategory] = slideIndex;
+
+      // Hide all slides
+      allSlides.forEach(slide => {
+        slide.style.display = 'none';
+      });
+
+      // Display current slide
+      catSlides[slideIndex - 1].style.display = 'flex';
+
+      // Update counter with clean leading-zero format
+      const currentStr = String(slideIndex).padStart(2, '0');
+      const totalStr = String(total).padStart(2, '0');
+      const counterEl = document.getElementById('slide-counter');
+      if (counterEl) {
+        counterEl.textContent = `${currentStr} / ${totalStr}`;
+      }
     }
 
-    function showSlides(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      if (n > slides.length) { slideIndex = 1; }    
-      if (n < 1) { slideIndex = slides.length; }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+    // Initialize from URL hash or default to 'urban'
+    function initGallery() {
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      if (hash && categoryIndices.hasOwnProperty(hash)) {
+        switchCategory(hash, false);
+      } else {
+        switchCategory('urban', false);
       }
-      slides[slideIndex - 1].style.display = "block";  
     }
+
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      if (hash && categoryIndices.hasOwnProperty(hash) && hash !== currentCategory) {
+        switchCategory(hash, false);
+      }
+    });
+
+    initGallery();
 
     // Mobile Touch Swipe Gesture Support
     let touchstartX = 0;
@@ -122,7 +267,6 @@
     function handleGesture() {
       let deltaX = touchendX - touchstartX;
       let deltaY = touchendY - touchstartY;
-      // Trigger swipe only if horizontal drag is dominant and sufficiently long (> 30px)
       if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 30) {
         if (deltaX < 0) {
           plusSlides(1); // Swipe Left -> Next

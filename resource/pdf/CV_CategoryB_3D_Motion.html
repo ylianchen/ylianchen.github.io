@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chen Yongliang — 3D Artist & Motion Designer — CV</title>
+  
+  <!-- Typography: JetBrains Mono + Playfair Display + Noto Sans SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    /*
+      PRINT-READY A4 EDITORIAL RESUME
+      Design Language: Minimalist Editorial Black & White
+      Pairing: Playfair Display (Serif) + JetBrains Mono (Monospace)
+      Layout: Line-free, 2-column grid (3fr / 5fr)
+    */
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #383838;
+      --light-muted: #666666;
+      --faint: #888888;
+      --font-main: "JetBrains Mono", "Noto Sans SC", monospace, sans-serif;
+      --font-serif: "Playfair Display", "Georgia", "Times New Roman", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Screen display wrapper */
+    body {
+      background-color: #e5e5e5;
+      display: flex;
+      justify-content: center;
+      padding: 24px 0;
+      color: var(--fg);
+      font-family: var(--font-main);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* A4 Canvas: 210mm x 297mm */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      background-color: var(--bg);
+      padding: 10mm 15mm 8mm 15mm;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: hidden;
+    }
+
+    /* Header Section */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 5.5mm;
+    }
+
+    .name-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .name-block h1 {
+      font-family: var(--font-serif);
+      font-size: 3.9rem;
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+      color: var(--fg);
+      text-transform: lowercase;
+    }
+
+    .name-block .cn-tag {
+      font-family: "Noto Sans SC", var(--font-main);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--light-muted);
+      margin-top: 2.2mm;
+    }
+
+    /* Vertical Role Title */
+    .role-title {
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+      color: var(--fg);
+      padding-top: 1mm;
+      white-space: nowrap;
+    }
+
+    /* Main 2-Column Grid (3fr left / 5fr right) */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 3fr 5fr;
+      gap: 10mm;
+      flex-grow: 1;
+    }
+
+    /* Column Containers */
+    .left-col, .right-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Section Typography */
+    .section-title {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--fg);
+      margin-bottom: 2mm;
+    }
+
+    .section-block {
+      margin-bottom: 3.8mm;
+    }
+
+    .section-block:last-child {
+      margin-bottom: 0;
+    }
+
+    p, li, .desc-text {
+      font-size: 0.65rem;
+      line-height: 1.38;
+      color: var(--muted);
+    }
+
+    /* Left Column: Profile */
+    .about-text {
+      font-size: 0.64rem;
+      line-height: 1.38;
+      color: var(--muted);
+      text-align: left;
+    }
+
+    /* Left Column: Contact */
+    .contact-item {
+      font-size: 0.65rem;
+      line-height: 1.45;
+      margin-bottom: 0.8mm;
+      color: var(--muted);
+    }
+
+    .contact-item strong {
+      color: var(--fg);
+      font-weight: 700;
+      display: inline-block;
+      width: 16mm;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Left Column: Languages */
+    .lang-item {
+      font-size: 0.65rem;
+      line-height: 1.45;
+      margin-bottom: 0.8mm;
+      color: var(--muted);
+    }
+
+    .lang-item strong {
+      color: var(--fg);
+      font-weight: 700;
+      display: inline-block;
+      width: 20mm;
+    }
+
+    /* Left Column: Skills */
+    .skill-group {
+      margin-bottom: 1.8mm;
+    }
+
+    .skill-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-name {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--fg);
+      margin-bottom: 0.2mm;
+    }
+
+    .skill-desc {
+      font-size: 0.63rem;
+      line-height: 1.32;
+      color: var(--muted);
+    }
+
+    /* Right Column: Experience, Education, Works */
+    .entry {
+      margin-bottom: 2.8mm;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      margin-bottom: 0.4mm;
+    }
+
+    .entry-title {
+      font-size: 0.70rem;
+      font-weight: 700;
+      color: var(--fg);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.25;
+    }
+
+    .entry-meta {
+      font-size: 0.63rem;
+      color: var(--light-muted);
+      margin-top: 0.3mm;
+      font-style: italic;
+    }
+
+    .entry-meta .divider {
+      margin: 0 3px;
+      font-style: normal;
+      color: var(--faint);
+    }
+
+    /* Bullet List (Line-free, editorial) */
+    .entry-list {
+      list-style: none;
+      margin-top: 0.6mm;
+      padding-left: 0;
+    }
+
+    .entry-list li {
+      position: relative;
+      padding-left: 2.6mm;
+      margin-bottom: 0.5mm;
+      font-size: 0.64rem;
+      line-height: 1.34;
+      color: var(--muted);
+    }
+
+    .entry-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--faint);
+      font-size: 0.62rem;
+    }
+
+    /* Selected Works Items */
+    .work-item {
+      margin-bottom: 1.8mm;
+      font-size: 0.64rem;
+      line-height: 1.34;
+    }
+
+    .work-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .work-title {
+      font-weight: 700;
+      color: var(--fg);
+    }
+
+    .work-year {
+      font-weight: 400;
+      color: var(--light-muted);
+      font-style: italic;
+    }
+
+    .work-desc {
+      color: var(--muted);
+    }
+
+    /* Print Styles */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        max-height: 297mm !important;
+        margin: 0 !important;
+        padding: 10mm 15mm 8mm 15mm !important;
+        box-shadow: none !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+        overflow: hidden !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- A4 Page Container -->
+  <div class="page">
+    
+    <!-- Header -->
+    <header class="header-container">
+      <div class="name-block">
+        <h1>chen<br>yongliang</h1>
+        <div class="cn-tag">陈泳梁</div>
+      </div>
+      <div class="role-title">
+        3D ARTIST &amp; MOTION DESIGNER
+      </div>
+    </header>
+
+    <!-- Content Grid (3fr : 5fr) -->
+    <div class="content-grid">
+      
+      <!-- Left Column (3fr) -->
+      <div class="left-col">
+        
+        <!-- Profile -->
+        <div class="section-block">
+          <h2 class="section-title">Personal Profile</h2>
+          <p class="about-text">
+            Multidisciplinary 3D artist and motion designer with formal training in digital media arts and a strong portfolio spanning CGI rendering, architectural visualization, real-time 3D animation, and broadcast-quality motion graphics. Combines technical 3D pipeline mastery with an artist's eye for composition, lighting, and visual storytelling.
+          </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="section-block">
+          <h2 class="section-title">Contact</h2>
+          <div class="contact-item"><strong>Phone</strong> +49 (0)152 03524073</div>
+          <div class="contact-item"><strong>Email</strong> <a href="mailto:ychen@hfk-bremen.de">ychen@hfk-bremen.de</a></div>
+          <div class="contact-item"><strong>Web</strong> <a href="https://ylianchen.github.io" target="_blank">ylianchen.github.io</a></div>
+          <div class="contact-item"><strong>GitHub</strong> <a href="https://github.com/ylianchen" target="_blank">github.com/ylianchen</a></div>
+        </div>
+
+        <!-- Languages -->
+        <div class="section-block">
+          <h2 class="section-title">Languages</h2>
+          <div class="lang-item"><strong>Chinese</strong> Native</div>
+          <div class="lang-item"><strong>English</strong> C1</div>
+          <div class="lang-item"><strong>German</strong> B2</div>
+          <div class="lang-item"><strong>Japanese</strong> N1</div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section-block">
+          <h2 class="section-title">Technical Skills</h2>
+          
+          <div class="skill-group">
+            <div class="skill-name">3D &amp; Rendering</div>
+            <div class="skill-desc">Cinema 4D, Blender, Maya, 3ds Max, V-Ray, Octane, Redshift</div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-name">Motion &amp; Video</div>
+            <div class="skill-desc">After Effects, Premiere Pro, DaVinci Resolve</div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-name">Real-time</div>
+            <div class="skill-desc">TouchDesigner, Unreal Engine, Unity, WebGL</div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-name">Design</div>
+            <div class="skill-desc">Adobe Photoshop, Illustrator, InDesign, Figma</div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-name">Creative Coding</div>
+            <div class="skill-desc">JavaScript/p5.js, Processing, Python, GLSL Shaders</div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-name">Photography</div>
+            <div class="skill-desc">Professional street, portrait &amp; architectural photography</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right Column (5fr) -->
+      <div class="right-col">
+        
+        <!-- Work Experience -->
+        <div class="section-block">
+          <h2 class="section-title">Work Experience</h2>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">3D CG Artist &amp; Visual Designer</div>
+              <div class="entry-meta">Freelance, Bremen <span class="divider">|</span> 2017 — Present</div>
+            </div>
+            <ul class="entry-list">
+              <li>Produced CGI architectural visualizations, product renders, and motion graphics for commercial and artistic clients</li>
+              <li>Created real-time 3D projections and generative visual systems using TouchDesigner for live performances and exhibitions</li>
+              <li>Delivered professional photography (street, portrait, architectural) for publications and exhibitions</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Creative Assistant — Visual Production</div>
+              <div class="entry-meta">Hafnia Foundation, Xiamen / Valparaíso <span class="divider">|</span> 2020</div>
+            </div>
+            <ul class="entry-list">
+              <li>Supported international art production with 3D visualization, video editing, and visual documentation</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">Co-founder &amp; Art Director</div>
+              <div class="entry-meta">Cheap Universe Game Studio, Xiamen <span class="divider">|</span> 2017 — 2019</div>
+            </div>
+            <ul class="entry-list">
+              <li>Directed visual identity, 3D asset creation, environment art, and cinematic sequences</li>
+              <li>Built complete art pipeline from concept to real-time implementation</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Education -->
+        <div class="section-block">
+          <h2 class="section-title">Education</h2>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">MA, Mediengestaltung (Media Art &amp; Design)</div>
+              <div class="entry-meta">Bauhaus-Universität Weimar <span class="divider">|</span> 2025 — Present</div>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">BA, Digital Media</div>
+              <div class="entry-meta">Hochschule für Künste Bremen <span class="divider">|</span> 2020 — 2025</div>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-title">BA, Digital Media Arts</div>
+              <div class="entry-meta">Xiamen University <span class="divider">|</span> 2015 — 2019</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Selected Works -->
+        <div class="section-block">
+          <h2 class="section-title">Selected Works</h2>
+
+          <div class="work-item">
+            <span class="work-title">Abyss Archive</span> <span class="work-year">(2026)</span> —
+            <span class="work-desc">Period-accurate desktop simulation + multi-layer TouchDesigner projection mapping</span>
+          </div>
+
+          <div class="work-item">
+            <span class="work-title">Contour Study</span> <span class="work-year">(2021)</span> —
+            <span class="work-desc">3D architectural animation: WWII submarine bunker digitization &amp; contemplative CG reconstruction</span>
+          </div>
+
+          <div class="work-item">
+            <span class="work-title">Naked Container</span> <span class="work-year">(2020)</span> —
+            <span class="work-desc">3D CG rendering series exploring volumetric form and material</span>
+          </div>
+
+          <div class="work-item">
+            <span class="work-title">Polytope XIa</span> <span class="work-year">(2023)</span> —
+            <span class="work-desc">Site-specific light composition with moving heads, motorized elements &amp; multi-projector mapping</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
